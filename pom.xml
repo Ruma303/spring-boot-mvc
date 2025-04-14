@@ -38,9 +38,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope> <!-- DevTools non incluso nei JAR finali -->
-			<optional>true</optional> <!-- Evita di includerlo come transitive dependency -->
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
+
+		<!-- Supporto per JSP con Tomcat -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
