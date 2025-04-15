@@ -1,0 +1,16 @@
+<!-- src/main/resources/templates/fragments/libs/tailwind.html -->
+<!-- Tailwind CSS -->
+<th:block th:fragment="tailwind">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</th:block>

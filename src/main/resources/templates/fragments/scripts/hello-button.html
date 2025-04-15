@@ -1,0 +1,41 @@
+<!-- src/main/resources/templates/fragments/scripts/hello-button.html -->
+<th:block th:fragment="hello-button">
+    <script>
+        const {createApp, ref} = Vue;
+
+        createApp({
+            setup() {
+                // Messaggi iniziali definiti in Vue
+                const vueMessage = ref("Messaggio iniziale di Vue!");
+                const tailwindMessage = ref("Messaggio iniziale di Tailwind!");
+
+                // Messaggi passati da Thymeleaf
+                const thymeleafVueMessage = /*[[${vueMessage}]]*/ "Messaggio Vue da Thymeleaf";
+                const thymeleafTailwindMessage = /*[[${tailwindMessage}]]*/ "Messaggio Tailwind da Thymeleaf";
+
+                // Variabile di stato per alternare i messaggi
+                const isBackendMessage = ref(false);
+
+                const changeMessage = () => {
+                    if (isBackendMessage.value) {
+                        // Torna ai messaggi del frontend
+                        vueMessage.value = "Messaggio iniziale di Vue!";
+                        tailwindMessage.value = "Messaggio iniziale di Tailwind!";
+                    } else {
+                        // Passa ai messaggi del backend
+                        vueMessage.value = thymeleafVueMessage;
+                        tailwindMessage.value = thymeleafTailwindMessage;
+                    }
+                    // Alterna lo stato
+                    isBackendMessage.value = !isBackendMessage.value;
+                };
+
+                return {
+                    vueMessage,
+                    tailwindMessage,
+                    changeMessage
+                };
+            }
+        }).mount("#app");
+    </script>
+</th:block>
