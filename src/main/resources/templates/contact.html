@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- src/main/resources/templates/contact.html -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{fragments/libs/tailwind :: tailwind}"/>
+    <th:block th:insert="~{fragments/libs/vue :: vue}"/>
+    <th:block th:replace="~{fragments/headers/head :: head(pageTitle=${pageTitle})}" />
+</head>
+
+<body>
+<div th:insert="fragments/headers/header :: header" th:with="pageTitle='Contact Form'"></div>
+
+<main class="container mx-auto p-8">
+    <p th:text="${message}" class="text-lg font-semibold text-blue-600">Contact us!</p>
+    <div id="app" class="mt-4 p-4 bg-gray-200 rounded-lg">
+
+    </div>
+</main>
+
+<div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>

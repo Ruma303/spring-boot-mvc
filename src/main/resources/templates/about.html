@@ -4,11 +4,11 @@
 <head>
     <th:block th:insert="~{fragments/libs/tailwind :: tailwind}" />
     <th:block th:insert="~{fragments/libs/vue :: vue}" />
-    <th:block th:replace="~{fragments/headers/head :: head}" />
+    <th:block th:replace="~{fragments/headers/head :: head(pageTitle=${pageTitle})}" />
 </head>
 
 <body>
-<div th:insert="~{fragments/headers/header :: header}"></div>
+<div th:insert="fragments/headers/header :: header" th:with="pageTitle='About page'"></div>
 
 <main class="container mx-auto p-8">
     <p th:text="${message}" class="text-lg font-semibold text-blue-600">Testo di default</p>
