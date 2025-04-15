@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #f44336; /* Red */
+    --background-color: #f0f0f0; /* Light Gray */
+    --text-color: #333; /* Dark Gray */
+    --font-family: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
